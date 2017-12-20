@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {data} from '../../data/data';
+import data from '../../data/city-codes.json';
 import {Typeahead} from 'react-bootstrap-typeahead'; 
 
 
