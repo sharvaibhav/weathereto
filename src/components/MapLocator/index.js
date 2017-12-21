@@ -8,6 +8,7 @@ const MapLocator = withScriptjs(withGoogleMap(props=>{
             defaultZoom={8}
             defaultCenter={{ lat: props.center.lat, lng: props.center.lng }}
             onClick = {props.onClick}
+            ref={props.onMapMounted}>            
         >
             <Marker
             position={{ lat: props.center.lat, lng: props.center.lng }}

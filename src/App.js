@@ -46,6 +46,14 @@ class App extends Component {
     this.setState({...this.state,cityData:{lat:data.latLng.lat(),lng:data.latLng.lng()}})
   }
 
+  handleMapMounted = (map)=>{
+    this._map = map;
+  }
+
+  componentDidUpdate() {
+    this._map.panTo({lat:this.state.cityData.lat, lng:this.state.cityData.lng});
+  }
+
   render() {
     return (
       <div className="App">
@@ -65,6 +73,7 @@ class App extends Component {
               loadingElement={<div style={{ height: `100%` }} />}
               onClick = {this.onMapClick}
               center={{lat:this.state.cityData.lat,lng:this.state.cityData.lng}}
+              onMapMounted={this.handleMapMounted}
             />
           </div>
           
